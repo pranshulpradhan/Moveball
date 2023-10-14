@@ -1,1 +1,44 @@
-index.html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Move The Ball</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <audio id="audio-correct" src="Correct_sound.mp3"></audio>
+    <audio id="audio-jump" src="cartoon-jump.mp3"></audio>
+    <audio id="audio-wrong" src="Wrong_sound.mp3"></audio>
+    <audio id="audio-left" src="Correct_sound.mp3"></audio>
+    <audio id="audio-right" src="Correct_sound.mp3"></audio>
+
+    <header class="container">
+      <div class="ball" id="ball"></div>
+    </header>
+
+    <div class="rules-popup" id="rulesPopup">
+        <div class="rules-content">
+            <h2>Game Rules</h2>
+            <ul>
+                <li>Boundary Out: Game over if the ball touches any boundary.</li>
+                <li>W Key: Move the ball up.</li>
+                <li>A Key: Move the ball left.</li>
+                <li>S Key: Move the ball down.</li>
+                <li>D Key: Move the ball right.</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="game-over-popup" id="gameOverPopup">
+        <div class="game-over-content">
+            <h2>Game Over</h2>
+            <p>You touched the boundary. Click OK to restart the game.</p>
+            <button id="restartButton">OK</button>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+  </body>
+</html>
