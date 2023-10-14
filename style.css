@@ -1,0 +1,97 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    height: 100%;
+    overflow: hidden; /* Prevents scrollbars */
+}
+
+body{
+    background-color: rgb(159, 235, 210);
+}
+
+.container {
+    display: flex;
+}
+
+.ball {
+    width: 100px;
+    height: 100px;
+    border: 2px solid blue;
+    border-radius: 50%;
+    background-color: aqua;
+    position: fixed;
+    top: 0; /* Start at the top */
+    left: 0; /* Start at the left */
+    transition: background-color 0.3s; /* Add a smooth color transition */
+    animation: trailEffect 0.3s linear infinite; /* Add a trail effect animation */
+}
+
+.rules-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #f9f9f9; /* Light gray background */
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    max-width: 80%; /* Limit the popup width */
+}
+
+.rules-content {
+    text-align: left;
+}
+
+.rules-popup.active {
+    display: block;
+}
+
+.game-over-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #ff6666; /* Light red background */
+    color: white; /* White text color */
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    max-width: 80%; /* Limit the popup width */
+}
+
+.game-over-content {
+    text-align: center;
+}
+
+.game-over-popup.active {
+    display: block;
+}
+
+@keyframes trailEffect {
+    0% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Adjust styling for smaller screens */
+    .rules-popup,
+    .game-over-popup {
+        max-width: 90%;
+    }
+    .ball {
+        width: 80px;
+        height: 80px;
+    }
+}
